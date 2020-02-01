@@ -79,6 +79,7 @@ zerofree $SNAPSHOTPATH | tee -a $LOGFILE
 if [ $PIPESTATUS -ne 0 ]
 then
         echo "$(date +"%Y-%m-%d-%H-%M-%S"):ERROR: Zerofree could not be run, aborting."  | tee -a $LOGFILE
+		sudo lvremove -f $SNAPSHOTPATH | tee -a $LOGFILE
         echo "$(date +"%Y-%m-%d-%H-%M-%S"):----------UNSUCCESSFULLY FINISHED BACKUP OF $HOST $JOBNAME ON $TIMESTAMP----------" | tee -a $LOGFILE
         sendemail -f $MAILFROM -t $MAILTO -u "ERROR: BORGBACKUP $HOST $JOBNAME ON $TIMESTAMP" -m ":(" -s $MAILHOST -xu $MAILUSER -xp $MAILPASSWORD -o tls=yes -a $LOGFILE
         rm $LOCKFILE
