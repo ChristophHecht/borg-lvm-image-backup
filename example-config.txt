@@ -1,0 +1,52 @@
+#!/bin/bash
+# BorgBackup LVM Image Backup Script V1.0 Config File
+#Passphrase of your borg repositorty
+BORG_PASSPHRASE=""
+
+#Location of your borg binary
+BORGLOCATION=borg
+
+#Borg compression to use
+COMPRESSION=
+
+#Path to your Borg Repository (ssh access or local directory)
+REPOSITORY=user@example.com:/example/path
+
+#Name of volume group containing the logical volume to backup
+VOLUMEGROUP=
+
+#Name of logical volume to backup
+LOGICALVOLUME=
+
+#Size of Snapshot, e. g. 2G for 2 gigabytes
+SNAPSHOTSIZE=
+
+#Hourly backups to keep
+KEEPHOURS=
+
+#Daily backups to keep
+KEEPDAYS=
+
+#Weekly backups to keep
+KEEPWEEKS=
+
+#Monthly backups to keep
+KEEPMONTHS=
+
+#Number of last backups that should always be kept
+KEEPLAST=
+
+#Sender mail address
+MAILFROM=
+
+#Recipient mail address
+MAILTO=
+
+#SMTP Server
+MAILHOST=
+
+#SMTP Username
+MAILUSER=
+
+#SMTP Password
+MAILPASSWORD=
